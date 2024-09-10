@@ -1,0 +1,135 @@
+{%extends 'home.html' %}
+
+
+{% block content %}
+
+{% for about_item in about %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+   
+   <style>
+    body, html {
+      height: 100%;
+      
+    
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+     
+      min-height: 75%;
+    }
+
+
+    </style>
+
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT ME</span></h5>
+   
+    <p> Hello, I'm Kamber Can Şahin. </p>
+    <p> I'm a passionate computer engineer specializing in software development and project management. 
+        I always feel excited about exploring new technologies and developing innovative solutions. After completing my bachelor's degree in computer engineering, 
+        I participated in various projects to specialize in software development and project management. Throughout my experiences, 
+        I have had the opportunity to develop applications on various platforms and in different languages. 
+        Thanks to my belief in teamwork and my communication skills, I can effectively collaborate even on complex projects. 
+        Adapting to the rapid changes in the software world and continuous learning have become a lifestyle for me. With each new project, 
+        I challenge myself to enhance my problem-solving skills and achieve the best results.
+        My goal is to use technology to improve people's lives and contribute to the world by creating innovative solutions.</p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"MARMARA UNIVERSITY"</i></p>
+      <p>IN ISTANBUL</p>
+    </div>
+    <img src="https://kambercansahin.github.io/istanbul.jpg" style="width:75%;max-width:1500px" class="w3-margin-top">
+    
+  </div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" >
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">EDUCATION</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'School');" id="myLink">
+        <div class="w3-col s6 tablink">School</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Experience');">
+        <div class="w3-col s6 tablink">Experience</div>
+      </a>
+    </div>
+
+    <div id="School" class="w3-container menu w3-padding-48 w3-card">
+     
+      <p class="w3-text-grey">ADIYAMAN YARMAKAYA ILKOGRETIM OKULU</p><br>
+    
+      
+      <p class="w3-text-grey">ADIYAMAN ANADOLU LISESI</p><br>
+    
+     
+      <p class="w3-text-grey">MARMARA UNIVERSITY</p><br>
+    
+     
+      
+    </div>
+
+    <div id="Experience" class="w3-container menu w3-padding-48 w3-card">
+      
+       
+      <p class="w3-text-grey">SOFTWARE</p><br>
+    
+      
+      <p class="w3-text-grey">PYTHON</p><br>
+      <p class="w3-text-grey">JAVA</p><br>
+      
+    
+      
+     
+    </div>  
+    <img src="https://kambercansahin.github.io/computeredu.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+</div>
+
+
+
+<!-- End page content -->
+</div>
+
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+
+    {% endfor %}
+
+{% endblock %}

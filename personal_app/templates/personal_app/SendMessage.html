@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+
+{%block content%}
+<form action="" method="POST">
+    {% csrf_token %}
+    
+  <div class="container", style="width: 50%;">
+   
+    <div class="mb-3">
+      <label for="nickname" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" name="email">
+      </div>
+      
+    
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+      </div>
+      
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </div>
+</div>
+</form>
+{%endblock%}

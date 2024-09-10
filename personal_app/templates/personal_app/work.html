@@ -1,0 +1,162 @@
+{%extends 'home.html' %}
+{%load static %}
+
+{% block content %}
+
+{% for work_item in work %}
+    
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+   
+   <style>
+body, html {
+    height: 100%;
+      
+    
+    }
+.bgimg {
+    background-position: center;
+    background-size: cover;
+     
+    min-height: 75%;
+}
+.service-box .service-ico img {
+    max-width: 100%; 
+    max-height: 100%; 
+    border-radius: 50%;
+    overflow: hidden; 
+}
+
+        
+</style>
+        
+        
+        
+        <!-- Header with image -->
+        <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+          
+        </header>
+        
+        <!-- Add a background color and large text to the whole page -->
+        <div class="w3-sand w3-grayscale w3-large">
+        
+   
+        
+        <!-- Menu Container -->
+        <div class="w3-container" >
+          <div class="w3-content" style="max-width:700px">
+         
+           
+            <div class="w3-row w3-center w3-card w3-padding">
+              
+             
+        </div>
+        
+        
+        
+        <!-- End page content -->
+        </div>
+        
+        
+        
+ 
+        
+<div class="container" style="width: 75%;">  
+<div class="skill-mf">
+    <p class="title-skills">Skills</p>
+    <span>{{work_item.Html}}</span> <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+    <span>{{work_item.css}}</span> <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+    <span>{{work_item.c}}</span> <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+    <span>{{work_item.java}}</span> <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+    <span>{{work_item.python}}</span> <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+    <span>{{work_item.django}}</span> <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+             aria-valuemax="100"></div>
+    </div>
+</div>
+
+</div> 
+
+<section id="service" class="services-mf route">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <h3 class="title-service">
+                        WORKS
+                    </h3>
+                    <div class="line-mf"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-mail">
+                    <div class="service-ico">
+                        <span class="ico-circle">
+                            <img src='https://kambercansahin.github.io/gmail-logo.jpg' width="100" height="100">
+                        </span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title"><a href= "{% url 'personal_app:send_welcome_email'%}">Mail</a></a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-linkein">
+                    <div class="service-ico">
+                        <span class="ico-circle">
+                            <img src="https://kambercansahin.github.io/linkedin.png" width="100" height="100">
+                        </span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title"><a href= "{{ work_item.linkedin }}">LinkedIn</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-github">
+                    <div class="service-ico">
+                        
+                        
+                        <span class="ico-circle">
+                            <img src="https://kambercansahin.github.io/github_logo.png" width="100" height="100">
+                        </span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title"><a href="{{ work_item.git_hub }}">GITHUB</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</section>
+
+    </section>
+
+
+{%endfor%}
+
+{% endblock %}
